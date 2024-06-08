@@ -1,0 +1,31 @@
+title: Alexa
+description: The single-page website of Alexa using Jekyll.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://example.com" # the base hostname & protocol for your site
+
+author: Alexa
+email: alexa@alexa.com
+
+theme: jekyll-alexa-theme
+header_background_color: "hsl(244, 54%, 43%)"
+section_header_background_color: "hsl(42, 92%, 62%)"
+site_header_title: "Alexa"
+
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+collections:
+  sections:
+    sort_by: order
+    output: false
+  publications:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "sections"
+    values:
+      section_layout: "section"

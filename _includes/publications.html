@@ -1,0 +1,19 @@
+{% capture content %}
+    {% for publication_section in include.section.publication_sections %}
+    <h5>{{ publication_section.title }}</h5>
+
+    {% for publication in site.publications %}
+        {% if publication_section.type == publication.section %}
+            <ul class="al-publication-list mt-3">
+                <li class="al-publication-list-item">{{ publication | bibliography }}</li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+
+{% endfor %}
+
+
+{% endcapture %}
+
+
+{% include section.html section=section content=content %}

@@ -1,0 +1,41 @@
+<section id="{% if include.section.anchor %}{{ include.section.anchor }}{% else %}{{ include.section.id | split: "/" | last }}{% endif %}">
+
+    <div class="container">
+
+            <div class="row vh-100-mod">
+
+
+                {% if include.section.image_url %}
+
+                    <div class="col  d-flex align-items-center justify-content-center">
+                        <figure class=" circular--portrait">
+                            <img class="mx-auto img-fluid"
+                                 src="{{ include.section.image_url }}">
+                        </figure>
+                    </div>
+
+                {% endif %}
+
+                <div class="col  d-flex align-items-center justify-content-center">
+
+                    <div class="mt-0">
+
+                        {{ include.section.content }}
+
+                    </div>
+
+                </div>
+
+                <div class="col-12">
+                    <div class="scroll-down-arrow">
+                        <a href="#about" class="text-reset text-decoration-none">
+                            &#8595;
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+</section>

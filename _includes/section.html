@@ -1,0 +1,64 @@
+{% capture title %}
+    <h2 class="al-subheading">{{ include.section.title }}</h2>
+{% endcapture %}
+
+
+{% if include.content %}
+    {% assign content = include.content %}
+{% else %}
+    {% capture content %}
+        {{ include.section.content }}
+    {% endcapture %}
+{% endif %}
+
+{% if include.lead %}
+    {% assign lead = include.lead %}
+{% else %}
+    {% capture lead %}
+            {{ include.section.lead }}
+    {% endcapture %}
+{% endif %}
+
+<section id="{% if include.section.anchor %}{{ include.section.anchor }}{% else %}{{ include.section.id | split: "/" | last }}{% endif %}">
+
+    <div class="container-fluid al-subheader">
+
+        <div class="container al-container-subheader">
+            <div class="row">
+                <div class="col">
+                    <h2 class="al-subheading">{{ title }}</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="row vh-100-mod">
+
+            <div class="col-12 col-lg-8">
+
+                <div class="mt-3 mb-5">
+
+                    <p class="lead mb-3">
+                        {{ lead }}
+                    </p>
+
+                    {{ content }}
+
+                </div>
+
+
+            </div>
+
+            <div class="col">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
