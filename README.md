@@ -2,6 +2,9 @@
 
 A Jekyll theme for a single page personal academic site.
 
+::: warning
+This theme was a custom theme for a specific use case and is not actively maintained. It is provided as is and might not work out of the box for your use case.
+
 ## Installation
 
 Add this line to your Jekyll site's `Gemfile`:
@@ -27,10 +30,41 @@ To use the theme with GitHub Pages, add the following to your site's `_config.ym
 remote_theme: ghxm/jekyll-alexa-theme
 ```
 
-Note that the custom publications formatting filter might not work with GitHub Pages. To take full advantage of the theme consider using [GitHub Actions to build and deploy your site](https://jekyllrb.com/docs/continuous-integration/github-actions/).
+In order to use the publications feature, you need to copy the bilbiography filter from `_plugins/bilbiography_filter.rb` of this repository to the `_plugins` directory of your own site.  Note that the filter might not work with GitHub Pages. To take full advantage of the theme consider using [GitHub Actions to build and deploy your site](https://jekyllrb.com/docs/continuous-integration/github-actions/).
+
+
 
 
 ## Usage
+
+To get a feel for the theme, check out the examples provided in the `_sections` and `_publications` directories as well as the `_config.yml` file in this repository.
+
+The theme relies on 'pages' stored in a `_sections` directory and publications stored in a `_publications` collection. Each page is a markdown file with a specific front matter configuration. In order to use the collection add the following to your site's `_config.yml` and create the corresponding directories in the root of your site:
+
+```bash
+mkdir _sections
+mkdir _publications
+```
+
+```yaml
+
+collections:
+  sections:
+    sort_by: order
+    output: false
+  publications:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "sections"
+    values:
+      section_layout: "section"
+```
+
+
+## Publications
 
 TODO
 

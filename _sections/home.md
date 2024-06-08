@@ -1,5 +1,4 @@
 ---
-hide: true
 menu_title: Home
 menu_hidden: true
 section_layout: home
