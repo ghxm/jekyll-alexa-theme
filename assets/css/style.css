@@ -5,6 +5,7 @@
 
 :root {
     --color-section-header: {{ site.section_header_background_color }};
+    --color-header: {{ site.header_background_color }};
     --text-color-section-header: black;
     --main-font: 'Roboto', sans-serif;
     --subheader-font-weight: 500;
@@ -33,7 +34,7 @@ body {
 
 
 #home {
-    background-color: hsl(244, 54%, 43%);
+    background-color: var(--color-header);
     color: white;
     padding: 1rem;
 
