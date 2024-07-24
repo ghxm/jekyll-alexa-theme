@@ -1,12 +1,12 @@
 ---
 ---
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,400&display=swap');
 
 :root {
     --color-section-header: {{ site.section_header_background_color }};
     --color-header: {{ site.header_background_color }};
-    --text-color-section-header: black;
+    --text-color-section-header: {{ site.header_background_color }};
     --main-font: 'Roboto', sans-serif;
     --subheader-font-weight: 500;
     --subheader-font-style: medium;
@@ -22,6 +22,31 @@ body {
     line-height: 2rem;
 }
 
+a {
+    color: var(--color-section-header); /* Blue */
+    text-decoration: none; /* Optional: removes underline */
+    font-weight: 500;
+}
+
+.lead {
+    font-weight: 300 !important;
+}
+
+.bg-section-header {
+    background-color: var(--color-section-header);
+}
+
+.bg-header {
+    background-color: var(--color-header);
+}
+
+.text-header {
+    color: var(--color-header);
+}
+
+.text-section-header {
+    color: var(--color-section-header);
+}
 
 .cover {
     object-fit: cover;
@@ -38,6 +63,10 @@ body {
     color: white;
     padding: 1rem;
 
+}
+
+#home-info {
+    color: #4b4b4b;
 }
 
 .al-subheader {

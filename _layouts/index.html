@@ -32,7 +32,7 @@
                     {% if section.menu_hidden %}
                         {% continue %}
                     {% endif %}
-                    <li class="nav-item al-nav-item">
+                    <li class="nav-item al-nav-item ">
                         <a class="nav-link" href="#{% if section.anchor %}{{ section.anchor }}{% else %}{{ section.id | split: "/" | last }}{% endif %}">{{ section.menu_title }}</a>
                     </li>
                 {% endfor %}
