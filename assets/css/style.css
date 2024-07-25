@@ -60,6 +60,21 @@ a {
     min-height: calc(100vh - 3rem);
 }
 
+.text-compact {
+    line-height: 1.5rem;
+}
+
+.project-meta {
+    font-size: 0.94rem;
+}
+
+.dot {
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: var(--color-section-header);
+    border-radius: 50%;
+    display: inline-block;
+}
 
 #home {
     background-color: var(--color-header);
