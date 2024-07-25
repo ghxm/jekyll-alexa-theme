@@ -180,3 +180,8 @@ section::before {
     margin-bottom: 1rem;
     line-height: 1.5rem;
 }
+
+#imprint {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
