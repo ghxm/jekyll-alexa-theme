@@ -13,3 +13,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    function highlightNavLink() {
+        let index = sections.length;
+
+        while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
+
+        navLinks.forEach((link) => link.classList.remove('active'));
+        if (index > 0) {
+            navLinks[index - 1].classList.add('active');
+        }
+    }
+
+    highlightNavLink();
+    window.addEventListener('scroll', highlightNavLink);
+});
