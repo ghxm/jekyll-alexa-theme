@@ -4,8 +4,10 @@
 
     <ul class="al-publication-list mt-3 mb-5">
 
-    {% for publication in site.publications %}
-        {% if publication_section.type == publication.section %}
+        {% assign sorted_publications = site.publications | sort: 'date' | reverse %}
+
+        {% for publication in sorted_publications %}
+            {% if publication_section.type == publication.section %}
                 <li class="al-publication-list-item">{{ publication | bibliography }}</li>
         {% endif %}
     {% endfor %}
