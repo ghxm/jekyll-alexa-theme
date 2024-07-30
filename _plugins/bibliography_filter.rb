@@ -15,6 +15,7 @@ module Jekyll
       doi = item['doi']
       editors = item['editors']&.join(', ')
       book_title = item['book_title']
+      url = item['url_']
 
       if type == 'chapter'
         output = "#{authors} (#{date}). #{title}. In #{editors} (Eds.), #{book_title}."
@@ -35,7 +36,8 @@ module Jekyll
           output += "." if location || publisher
         end
 
-      output += " doi: <a href=\"https://doi.org/#{doi}\" target=\"_blank\">#{doi}</a>." if doi
+      output += " <span class=\"fst-italic\">doi:</span> <a href=\"https://doi.org/#{doi}\" target=\"_blank\">#{doi}</a>." if doi
+      output += " <a href=\"#{url}\" target=\"_blank\">#{url}</a>." if url
 
       output
     end
