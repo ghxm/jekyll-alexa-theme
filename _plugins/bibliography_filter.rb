@@ -1,5 +1,3 @@
-require 'date'
-
 module Jekyll
   module BibliographyFilters
     def bibliography(item)
@@ -14,16 +12,30 @@ module Jekyll
       pages = item['pages']
       publisher = item['publisher']
       location = item['location']
+      doi = item['doi']
+      editors = item['editors']&.join(', ')
+      book_title = item['book_title']
 
-      if item['type'] != 'book'
+      if type == 'chapter'
+        output = "#{authors} (#{date}). #{title}. In #{editors} (Eds.), #{book_title}."
+      elsif type != 'book'
         output = "#{authors} (#{date}). #{title}. #{journal}"
         output += ", #{volume}" if volume
         output += "(#{issue})" if issue
         output += ": #{pages}" if pages
         output += "."
       else
-        output = "#{authors} (#{date}). #{title}. #{publisher}, #{location}."
+        output = "#{authors} (#{date}). #{title}."
       end
+
+      if type == 'book' || type == 'chapter'
+          output += " #{publisher}" if publisher
+          output += "," if location && publisher
+          output += " #{location}" if location
+          output += "." if location || publisher
+        end
+
+      output += " doi: <a href=\"https://doi.org/#{doi}\" target=\"_blank\">#{doi}</a>." if doi
 
       output
     end
